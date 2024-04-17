@@ -13,7 +13,7 @@ function run() {
     // Connect the client to the server	(optional starting in v4.7)
    client.connect();
     // Send a ping to confirm a successful connection
-    client.db().command({ ping: 1 });
+    client.db("workoutWebsite").command({ ping: 1 });
     console.log("Pinged your deployment. You successfully connected to MongoDB!");
   } finally {
     // Ensures that the client will close when you finish/error
@@ -21,19 +21,21 @@ function run() {
   }
 }
 run();
-const db = client.db();
+const db = client.db("workoutWebsite");
 let users = db.collection('users');
 const exercises = db.collection('exercises');
 const workouts = db.collection('workouts');
 
 async function insertDoc() {
     try{
-        //await client.connect();
-        users.insertOne({"username" : "insertTest", "password": "12358"});
+        client.connect();
+        await users.insertOne({"username" : "insertTest", "password": "12358"});
         console.log("Added a document");
     } finally{
         await client.close();
     }
 }
-
-console.log(users.findOne());
+insertDoc();
+//users.insertOne({"username" : "insertTest", "password": "12358"});
+//let result = users.findOne();
+//console.log(result);
