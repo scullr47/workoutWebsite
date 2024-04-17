@@ -1,0 +1,2 @@
+//This will be the first thing that the user sees when they enter the webpage
+//From here, they will see some community listed workouts, as well as options to sign in, and to navigate to the workout page
