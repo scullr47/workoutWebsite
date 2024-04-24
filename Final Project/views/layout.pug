@@ -1,6 +1,25 @@
 doctype html
 html(lang="en")
-    head
-        title= "Workout Website"
-    block footer 
-        a(href="/") Homepage
+  head
+    block styles
+      style 
+        include ./styles.css
+	
+    title= "The Workout Website"
+  body
+
+    h1 The Workout Website
+  
+
+    block content
+
+  block footer
+   
+      a(href='/') Homepage
+      |
+      |
+      a(href='/login') Login/Signup
+      |
+      |
+      a(href='/workout') Create a Workout 
+
