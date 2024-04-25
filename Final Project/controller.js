@@ -11,9 +11,9 @@ let bp = require('body-parser');
 let session = require('express-session');
 
 app.listen(3000, async ()=> {
+    //start and wait for the DB connection
     try{
-		await mongoose.connect('mongodb+srv://scullr47:RowanMMAFan17!@workoutdb.nc3uu06.mongodb.net/?retryWrites=true&w=majority&appName=WorkoutDB', {useNewUrlParser: true, useUnifiedTopology: true })
-
+        await mongoose.connect('mongodb://127.0.0.1/workoutWebsite', {useNewUrlParser: true, useUnifiedTopology: true })
 		await database.get("workoutWebsite");
     } catch (e){
         console.log(e.message);
@@ -46,4 +46,3 @@ app.use('*', function(req, res){
 app.use((err, req, res, next)=>{
 	res.status(500).render('error', {message: err.message})
 })
-
