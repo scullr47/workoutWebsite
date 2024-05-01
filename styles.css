@@ -1,0 +1,17 @@
+h1 {
+    color: blue;
+  }
+  #activity {
+    border-style: groove;
+    border-color: purple;
+  }
+  a:hover {
+    color: yellow;
+  }
+  .no-bullet {
+    list-style-type: none;
+  }
+  .center {
+    text-align: center;
+  }
+  
