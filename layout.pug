@@ -1,0 +1,28 @@
+doctype html
+html(lang="en")
+  head
+    block styles
+      style 
+        include ./styles.css
+	
+    <h1 class=center> The Workout Website</h1>
+  body
+
+    block content
+
+  block footer
+    .center
+      a(href='/') Homepage
+      |
+      |
+      a(href='/login') Login/Signup
+      |
+      |
+      a(href='/workout') Create a Workout
+      |
+      | 
+      a(href='commWorkout') Community Workouts
+      |
+      |
+      a(href='myWorkout') My Workouts
+
