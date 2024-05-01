@@ -1,0 +1,11 @@
+extends layout
+block content
+
+  h2 User Created Workouts:
+  ul
+    if (workouts && workouts.length > 0)
+      each workout in workouts
+        li
+          p #{workout.name}: #{workout.description}
+    else
+      li No workouts found
