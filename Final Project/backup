@@ -1,16 +1,11 @@
-extends layout
-
-block content
-  <h2 class=center> Community Workouts </h2>
-
-  ul
-    if (workouts && workouts.length > 0)
-      each workout in workouts
-        li= workout.userName + ': ' 
-          each exerciseKey in Object.keys(workout.exercises)
-            - if(exerciseKey !== 'length')
-              = workout.exercises[exerciseKey] + '   '
-      li.no-bullet
-    else
-      li No workouts found
-    li.no-bullet
+app.get('/commWorkout', async function (req, res, next){
+  try {
+      let workoutsCursor = await database.get("workoutWebsite").collection("workouts").find();
+      let workouts = await workoutsCursor.toArray();
+      console.log(workouts);
+      res.render('commWorkout', { workouts: workouts });
+  } catch (e) {
+      console.log("Error!", e);
+      next(e);
+  }
+});
