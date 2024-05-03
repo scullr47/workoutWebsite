@@ -2,26 +2,11 @@ let mongoose = require('mongoose');
 
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const uri = "mongodb://127.0.0.1/workoutWebsite";
-// Create a MongoClient with a MongoClientOptions object to set the Stable API version
-const client = new MongoClient(uri, { useUnifiedTopology: true }
-    );
-//var getID = require('mongodb').ObjectID();
+const client = new MongoClient(uri, { useUnifiedTopology: true });
 let dbName = "workoutWebsite";
 let database = {};
 let myDB;
-/*function run() {
-    try {
-        // Connect the client to the server	(optional starting in v4.7)
-        client.connect();
-        // Send a ping to confirm a successful connection
-        client.db("workoutWebsite").command({ ping: 1 });
-        console.log("Pinged your deployment. You successfully connected to MongoDB!");
-    } finally {
-        // Ensures that the client will close when you finish/error
-        //await client.close();
-    }
-}
-run();*/
+
 var connect = async function(dbName){
     try{
 	await client.connect();
@@ -41,6 +26,7 @@ var connect = async function(dbName){
     } 
 }
 
+//Login schema -eric cho
 const LoginSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -51,10 +37,8 @@ const LoginSchema = new mongoose.Schema({
         required: true
     }
 });
-
 const collection = mongoose.model("users", LoginSchema);
-//Call get("<name_of_your_DB"> to initialize the db connection
-//after that you can can call get() to just get the connection anywhere
+
 database.get = function(dbName){
     if (myDB){
 	console.log("Already connected!");
@@ -83,3 +67,6 @@ database.close = async function(){
 };
 
 module.exports = { database, collection };
+
+
+
