@@ -2,12 +2,12 @@ INSTRUCTIONS FOR APP:
 
 Dependencies to install:
 
-HTTP
-querystring
-express/express-session
-mongodb
-mongoose
-body-parser
+HTTP,
+querystring, 
+express/express-session, 
+mongodb, 
+mongoose, 
+body-parser, 
 pug
 
 Accessing Database:
