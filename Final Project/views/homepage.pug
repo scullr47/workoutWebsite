@@ -3,4 +3,21 @@ extends layout
 block content
   .body 
   <h2 class=center> Welcome, This is the homepage </h2>
-  <h3 class=info> The Workout Website is a website dedicated to organizing workouts posted by the community and creating your own unique workouts that users can create and share to the community at large.</h3>
+  <h2 class=center> The Workout Website is a website dedicated to organizing workouts posted by the community and creating your own unique workouts that users can create and share to the community at large.<h2 class=center>
+  <h2 class=center> Before you SignUp/Sign In, you can view some of the others users workouts that they created below.<h2 class=center>
+  <h2 class=center> If you would like create your own workouts, and view your saved ones, SIGN IN! <h2 class=center>
+  p.center
+    | Dont have an account?
+    a(href="/signup")  Sign up here!
+    
+  p.center
+    | Already have an account?
+    a(href="/login")  Login here!
+
+  p.center
+    | View some of our communities Workouts!
+    a(href="/commWorkout")  Take me there
+  p.center
+    | Logged in currently? Sign Out 
+    a(href='/logout') Here
+
