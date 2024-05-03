@@ -1,19 +1,19 @@
-Someone needs to edit this telling professor what to do
+INSTRUCTIONS FOR APP:
 
+Dependencies to install:
 
-//Function for the logout link
+HTTP
+querystring
+express/express-session
+mongodb
+mongoose
+body-parser
+pug
 
-app.get('/logout', function(req, res) {
-  req.session.destroy(function(err) {
-      if(err) {
-          console.error('Error destroying session:', err);
-          res.status(500).send('Error logging out');
-      } else {
-          res.redirect('/');
-      }
-  });
-});
+Accessing Database:
 
-//added href for layout page
+mongorestore the dump folder to get access to workoutWebsite DB
 
-        a(href='/logout') Logout &nbsp; | &nbsp;
+Port:
+
+This app runs on localhost:3000
