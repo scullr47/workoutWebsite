@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  <h2 class=center> My Workouts </h2>
+  li.no-bullet
+
+  ul
+      if (workouts && workouts.length > 0)
+        each workout in workouts
+          li= workout.userName + ': '
+            each exerciseKey in Object.keys(workout.exercises)
+              - if(exerciseKey !== 'length')
+              = workout.exercises[exerciseKey] + '   '
+        li.no-bullet
+      else
+        li No workouts found for user
+      
+      li.no-bullet
+      

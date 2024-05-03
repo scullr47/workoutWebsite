@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  <h2 class=center> Community Workouts </h2>
+
+  ul
+    if (workouts && workouts.length > 0)
+      each workout in workouts
+        li= workout.userName + ': ' 
+          each exerciseKey in Object.keys(workout.exercises)
+            - if(exerciseKey !== 'length')
+              = workout.exercises[exerciseKey] + '   '
+      li.no-bullet
+    else
+      li No workouts found
+    li.no-bullet
